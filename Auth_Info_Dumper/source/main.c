@@ -208,6 +208,11 @@ static void decrypt_self_auth_info(const char *file)
         strcmp(dot, ".bin")) {
         return;
     }
+
+    char msg[512];
+    snprintf(msg, 512, "Decrypting %s AUTH_INFO", file);
+    systemMessage(msg);
+    
     dprintf("Decrypting %s AUTH_INFO.\n", file);
     self_get_auth_info(file);
 }

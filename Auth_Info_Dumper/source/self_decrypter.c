@@ -505,7 +505,7 @@ int self_kget_auth_info(
     memset(auth_info, 0, sizeof(auth_info));
 
     const char *path = uap->path;
-    int res = kern_get_self_auth_info(td, path, (int)UIO_SYSSPACE, auth_info);
+    int res = kern_get_self_auth_info(td, (int)UIO_SYSSPACE, path, auth_info);
     if(res == 0)
     {
         khexdump("AUTH_INFO", auth_info, 0x88);
