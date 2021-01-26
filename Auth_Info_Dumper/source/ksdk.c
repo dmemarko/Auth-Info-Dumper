@@ -9,7 +9,7 @@
     ret (*name) args
 #define KDATA(slide, name, type) \
     type* name
-#include "ksdk_672.inc"
+#include "ksdk_702.inc"
 #undef KFUNC
 #undef KDATA
 
@@ -31,7 +31,7 @@ void init_ksdk() {
     name = KSLIDE(slide)
 #define KDATA(slide, name, type) \
     name = KSLIDE(slide)
-#include "ksdk_672.inc"
+#include "ksdk_702.inc"
 #undef KFUNC
 #undef KDATA
 }

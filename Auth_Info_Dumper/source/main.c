@@ -59,10 +59,10 @@ void kpatch_enablemapself(struct thread *td)
     uint8_t *kmem;
     cpu_disable_wp();
 
-    uint8_t* kernel_base = &((uint8_t*)read_msr(0xC0000082))[-K672_XFAST_SYSCALL];
-    uint8_t* map_self_patch1 = &kernel_base[K672_MMAP_SELF_1];
-    uint8_t* map_self_patch2 = &kernel_base[K672_MMAP_SELF_2];
-    uint8_t* map_self_patch3 = &kernel_base[K672_MMAP_SELF_3];
+    uint8_t* kernel_base = &((uint8_t*)read_msr(0xC0000082))[-K702_XFAST_SYSCALL];
+    uint8_t* map_self_patch1 = &kernel_base[K702_MMAP_SELF_1];
+    uint8_t* map_self_patch2 = &kernel_base[K702_MMAP_SELF_2];
+    uint8_t* map_self_patch3 = &kernel_base[K702_MMAP_SELF_3];
 
     // sceSblACMgrIsAllowedToMmapSelf result
     kmem = (uint8_t*)map_self_patch1;
